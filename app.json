@@ -2,7 +2,7 @@
   "name": "can-we-skip-the-dishes",
   "description": "🍽 Can we skip the dishes? Yes we can! This is a basic spa (no server-side rendering) for displaying products and customers orders.",
   "repository": "https://github.com/guicheffer/can-we-skip-the-dishes",
-  "logo": "",
+  "logo": "https://www.skipthedishes.com/static/favicon.ico?_v20180316160720368",
   "keywords": [
     "react",
     "redux",

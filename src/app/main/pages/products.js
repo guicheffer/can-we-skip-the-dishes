@@ -28,7 +28,7 @@ class Listing extends Component {
         <div className="products__list--wrapper">
           { products.length ? <ul className="products__list">
           { products.map((product, key) => <ProductItem key={key} {...product}/>) }
-          </ul> : <ProgressBar mode="indeterminate" type="circular" /> }
+          </ul> : <ProgressBar mode="indeterminate" type="circular" multicolor /> }
         </div>
       </section>
     )
