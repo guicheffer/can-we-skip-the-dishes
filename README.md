@@ -26,8 +26,18 @@ Just `make run` and we're ready to rock! Access your http://localhost:3000/
 
 ⬆️ explain those later
 
-### Why does this exist?
-Because it makes easier to get this move forward in terms of developing a product or website from scratch. I developed this based on some experiences I had when creating applications in Vue.js, Backbone, React and Angular v(1|2).x
+___
+This is how the account profile to Login was created:
+```json
+{
+  "email": "can-we-skip-the-dishes@guicheffer.me",
+  "name": "Joao Guilherme",
+  "address": "123 Dishes Ave",
+  "creation": "2018-03-18T13:09:29.727Z",
+  "password": "yeswecan"
+}
+```
+___
 
 ## Todo
 - [ ] Improve README.md
