@@ -18,7 +18,9 @@ can-we-skip-the-dishes-layout() {
   }
 
   &__panel {
+    box-sizing: border-box;
     padding: $spacing-large;
+    position: relative;
     width: 100vw;
 
     .panel {
@@ -38,6 +40,13 @@ can-we-skip-the-dishes-layout() {
       }
 
       &__error { text-align: center; }
+
+      &__logout {
+        margin: $spacing-large;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
     }
   }
 }
