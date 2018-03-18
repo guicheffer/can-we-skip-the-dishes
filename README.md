@@ -1,6 +1,8 @@
 # Can we skip the dishes, @guicheffer?
 👀 Yes we can! This is a basic spa (no server-side rendering) for displaying products and customers orders.
 
+**ps**. not so seo friendly 😩
+
 ## How to install
 Please, `make i` or `make install`
 

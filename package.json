@@ -7,7 +7,7 @@
   "author": "João Guilherme <hi@guicheffer.me>",
   "homepage": "https://github.com/guicheffer/can-we-skip-the-dishes",
   "config": {
-    "title": "A simple and basic spa",
+    "title": "Can we skip the dishes?",
     "description": "🍽 Can we skip the dishes? Yes we can! This is a basic spa (no server-side rendering) for displaying products and customers orders.",
     "port": "3000",
     "path": {
