@@ -18,7 +18,12 @@ export default {
   token: null,
 
   _initialize () {
-    axios.defaults.headers.post['Content-Type'] = 'application/json'
+    axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8'
+    this._deleteToken()
+  },
+
+  _deleteToken () {
+    delete axios.defaults.headers.common.Authorization
   },
 
   authenticate ({
@@ -39,8 +44,9 @@ export default {
       })
       .catch(() => {
         this.token = null
-        delete axios.defaults.headers.common.Authorization
         browser.localStorage.removeItem('can-we-skip-the-dishes-token')
+        this._deleteToken()
+
         onFail()
       })
   },
@@ -53,7 +59,10 @@ export default {
     return this.token
   },
 
-  signout () {
+  deauthenticate (onByeBye) {
     this.token = null
+    browser.localStorage.removeItem('can-we-skip-the-dishes-token')
+
+    return onByeBye()
   },
 }

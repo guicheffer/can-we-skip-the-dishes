@@ -1,30 +1,48 @@
-// export const ADD_ITEM = 'items/ADD_ITEM'
+import axios from 'axios'
+
+import endpoint from '../utils/endpoint-url'
+
+export const REQUESTED = 'products/REQUESTED'
+export const SUCCESS = 'products/SUCCESS'
 
 const initialState = []
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    // case ADD_ITEM: {
-    //   const { name, species } = action.data.item
-    //
-    //   return [
-    //     ...state,
-    //     { name, species },
-    //   ]
-    // }
+    case REQUESTED: {
+      return [...state]
+    }
+
+    case SUCCESS: {
+      const products = action.data
+
+      return [
+        ...state,
+        ...products,
+      ]
+    }
 
     default:
       return state
   }
 }
 
-// export const addItem = (item) => {
-//   const trigger = (dispatch) => {
-//     dispatch({
-//       type: ADD_ITEM,
-//       data: { item },
-//     })
-//   }
-//
-//   return trigger
-// }
+export const getProducts = () => {
+  const trigger = (dispatch) => {
+    dispatch({
+      type: REQUESTED,
+    })
+
+    axios.get(`${endpoint('Product')}`)
+      .then((res) => {
+        const { data } = res
+
+        dispatch({
+          data,
+          type: SUCCESS,
+        })
+      })
+  }
+
+  return trigger
+}

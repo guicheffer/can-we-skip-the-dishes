@@ -12,7 +12,6 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 
 import store, { history } from '../core/store'
-
 import AbstractEntry from '../core/entry'
 
 import Homepage from './pages/homepage'
