@@ -1,0 +1,51 @@
+/*- 🎨 Base layout
+ *
+ * Responsible for all commons layout
+ *
+-*/
+
+@import 'container';
+@import 'spacing';
+
+@import '../main/pages/homepage'
+@import '../main/pages/login'
+@import '../main/pages/products'
+
+can-we-skip-the-dishes-layout() {
+  &__container {
+    container();
+    container-responsive();
+  }
+
+  &__panel {
+    padding: $spacing-large;
+    width: 100vw;
+
+    .panel {
+      &__homepage {
+        homepage()
+        homepage-responsive()
+      }
+
+      &__login {
+        login()
+        login-responsive()
+      }
+
+      &__products {
+        products()
+        products-responsive()
+      }
+
+      &__error { text-align: center; }
+    }
+  }
+}
+
+can-we-skip-the-dishes-layout-responsive() {
+  +mq-medium-up() {
+    &__panel {
+      width: calc(100vw - 50%);
+    }
+  }
+}
