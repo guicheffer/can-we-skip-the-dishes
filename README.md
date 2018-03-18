@@ -13,6 +13,10 @@ Please, `make i` or `make install`
 ## How to run
 Just `make run` and we're ready to rock! Access your http://localhost:3000/
 
+## Hey, run it on the live demo! ❤️
+Create that as well: https://can-we-skip-the-dishes.herokuapp.com/
+
+You can login with: `can-we-skip-the-dishes@guicheffer.me` as the email and the password: `yeswecan`
 
 ### Choice of Stack
 - react-toolbox
@@ -28,9 +32,15 @@ Just `make run` and we're ready to rock! Access your http://localhost:3000/
 
 ⬆️ explain those later
 
+I'm sorry for not completing the test, there were too details I wanted to adjust, that's why I got lost in time.
+
+BUT!
+
+I would certainly add the missing features if I had focused on the architecture, instead only of the client-side details.
+
 ___
 This is how the account profile to Login was created:
-```json
+```javascript
 {
   "email": "can-we-skip-the-dishes@guicheffer.me",
   "name": "Joao Guilherme",
