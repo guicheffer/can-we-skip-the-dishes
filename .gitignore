@@ -1,0 +1,19 @@
+# Local things
+/app/
+/.yarnclean
+
+# External
+node_modules/
+coverage/
+tests/e2e/reports/
+tests/e2e/screenshots/
+.env
+.DS_Store
+*.log
+yarn-error.log
+yarn-debug.log
+npm-debug.log*
+npm-debug.log*
+.chromedriver.log
+*.tgz
+*.zip
