@@ -1,0 +1,22 @@
+{
+  "name": "can-we-skip-the-dishes",
+  "description": "🍽 Can we skip the dishes? Yes we can! This is a basic spa (no server-side rendering) for displaying products and customers orders.",
+  "repository": "https://github.com/guicheffer/can-we-skip-the-dishes",
+  "logo": "",
+  "keywords": [
+    "react",
+    "redux",
+    "reactredux",
+    "html5",
+    "css3",
+    "jest",
+    "webpack",
+    "stylus",
+    "es6",
+    "nightwatch",
+    "spa",
+    "crud",
+    "localstorage",
+    "skip-the-dishes"
+  ]
+}
