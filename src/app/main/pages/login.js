@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-
-import { Input, Button } from 'react-toolbox'
+import { ProgressBar, Input, Button } from 'react-toolbox'
 
 import auth from '../utils/auth'
 
@@ -47,6 +46,8 @@ class Login extends Component {
           </div>
 
           <Button type="submit" label="Login" disabled={this.state.isLoading} raised primary />
+
+          { this.state.isLoading ? <ProgressBar className="login__loading" mode="indeterminate" type="circular" /> : '' }
         </form>
       </section>
     )
@@ -80,7 +81,6 @@ class Login extends Component {
         })
       },
       onFail: () => {
-        console.log('not right')
         this.setState({
           ...this.state,
           failed: true,

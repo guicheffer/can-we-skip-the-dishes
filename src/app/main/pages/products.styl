@@ -18,9 +18,23 @@ products() {
     }
 
     &__list {
+      $width = 300px;
+
+      border-radius: $spacing-xxsmall;
+      border: 1px solid $gray-base;
+      box-shadow: $spacing-xxsmall $spacing-xxsmall $spacing-base $gray-base;
+      max-height: $width;
+      overflow-y: scroll;
+
       &--wrapper {
         margin: $spacing-large 0 0;
         text-align: center;
+      }
+
+      .list {
+        &__item {
+          text-align: left;
+        }
       }
     }
   }
