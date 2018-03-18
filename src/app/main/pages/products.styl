@@ -38,8 +38,23 @@ products() {
       }
 
       .list {
+        &__individual { position: relative; }
+
         &__item {
+          $max-width-description-text = 730px;
+
           text-align: left;
+
+          // hack for react-toolbox list description component
+          [data-react-toolbox=list-item-text] { max-width: $max-width-description-text !important; }
+
+          &--price {
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            position: absolute;
+            right: $spacing-small;
+            top: $spacing-large;
+          }
         }
       }
     }

@@ -14,8 +14,9 @@ const { title, description, path: common } = defaults
 const stylintrc = JSON.parse(fs.readFileSync(path.resolve(__dirname, common.stylintrc)))
 
 module.exports = function(env = {}) {
-  let cdnPath = env.cdnPath || common.static || common.liveUrl
-  cdnPath = cdnPath.replace(/^\'|\'$/g, '')
+  let cdnPath = env.cdnPath || common.static
+  if (env.prod) cdnPath = `${common.liveUrl}/${common.static}`
+  cdnPath = env.dev ? `/${cdnPath}` : cdnPath.replace(/^\'|\'$/g, '')
 
   const loaders = {
     styl: [
@@ -104,12 +105,6 @@ module.exports = function(env = {}) {
     module: {
       rules: [
         {
-          test: /\.styl$/,
-          use: plugins.extractEntryCSS.extract({
-            use: loaders.styl,
-          }),
-        },
-        {
           // For React Toolbox
           test: /\.css$/,
           use: [
@@ -120,7 +115,7 @@ module.exports = function(env = {}) {
                 importLoaders: 1,
                 localIdentName: '[name]--[local]--[hash:base64:8]',
                 modules: true,
-                sourceMap: true,
+                sourceMap: false,
               },
             },
             {
@@ -130,6 +125,12 @@ module.exports = function(env = {}) {
               },
             }
           ],
+        },
+        {
+          test: /\.styl$/,
+          use: plugins.extractEntryCSS.extract({
+            use: loaders.styl,
+          }),
         },
         {
           test: /(\.js|\.jsx)$/,

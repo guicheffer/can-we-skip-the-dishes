@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Button } from 'react-toolbox'
 
-import auth from '../utils/auth'
+import auth from '../../utils/auth'
 
 class LogoutButton extends Component {
   render () {

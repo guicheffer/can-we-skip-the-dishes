@@ -13,13 +13,13 @@
     "path": {
       "dist": "app/",
       "jest": "tests/unit/jest.config.js",
-      "liveUrl": "https://can-we-skip-the-dishes.herokuapp.com/static/",
+      "liveUrl": "https://can-we-skip-the-dishes.herokuapp.com/",
       "main": "index.html",
       "nightwatch": "tests/e2e/nightwatch.conf.js",
       "run": "run.js",
       "shortcut32x32": "setup/favicon.ico",
       "src": "src/app/",
-      "static": "static/",
+      "static": "static",
       "stylintrc": ".stylintrc",
       "unitTests": [
         "./tests/unit/specs/"

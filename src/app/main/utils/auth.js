@@ -37,7 +37,7 @@ export default {
     axios.post(`${endpoint('Customer/auth')}?email=${email}&password=${password}`)
       .then((res) => {
         this.token = res.data
-        axios.defaults.headers.common.Authorization = this.token
+        axios.defaults.headers.common.Authorization = `Bearer ${this.token}`
         browser.localStorage.setItem('can-we-skip-the-dishes-token', this.token)
 
         onSuccess()

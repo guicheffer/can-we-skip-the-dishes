@@ -11,6 +11,8 @@
 @import '../main/pages/login'
 @import '../main/pages/products'
 
+@import '../main/components/cart'
+
 can-we-skip-the-dishes-layout() {
   &__container {
     container();
@@ -41,13 +43,22 @@ can-we-skip-the-dishes-layout() {
 
       &__error { text-align: center; }
 
-      &__logout {
+      &__header {
+        display: flex;
+        flex-direction: flex-end;
         margin: $spacing-large;
         position: absolute;
         right: 0;
         top: 0;
+
+        > button { margin-left: $spacing-base; }
       }
     }
+  }
+
+  &__cart {
+    cart()
+    cart-responsive()
   }
 }
 

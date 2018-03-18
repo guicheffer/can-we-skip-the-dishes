@@ -21,6 +21,7 @@
 
 @import 'layout';
 
+@import '../header/header';
 @import '../footer/footer';
 
 font-face-normal()
@@ -53,12 +54,15 @@ body, input, a {
   can-we-skip-the-dishes-layout();
   can-we-skip-the-dishes-layout-responsive();
 
+  &__header {
+    header();
+  }
+
   &__wrapper {
-    please-align-it-center()
+    please-align-it-center();
   }
 
   &__footer {
     footer();
-    footer-responsive();
   }
 }

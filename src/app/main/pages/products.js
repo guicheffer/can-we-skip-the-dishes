@@ -5,7 +5,6 @@
  *
 -*/
 
-import _ from 'lodash'
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -17,7 +16,10 @@ import {
   ProgressBar,
 } from 'react-toolbox'
 
-import LogoutButton from '../components/logout-button'
+import currencyPrefix from '../utils/currency-prefix'
+
+import LogoutButton from '../components/shared/logout-button'
+import Cart from '../components/cart'
 
 import {
   toggleOnCart,
@@ -38,15 +40,19 @@ class Listing extends Component {
         </Helmet>
 
         <h1 className="products__welcome"> Hello, Customer! </h1>
-        <LogoutButton/>
-        <p> length: { cart.length ? cart.length : '' }</p>
+
+        <div className="panel__header">
+          { cart.length ? <Cart cart={cart} products={list}/> : '' }
+
+          <LogoutButton/>
+        </div>
 
         <div className="products__orientation">
           <p> Please select the products as many as you want!  </p>
           <p> After that, you will be able to checkout your cart! 🙂 </p>
 
           <small className="products__orientation--sorry">
-            ⚠️ Unfortunately, you can only check one item of each product.
+            ⚠️ Unfortunately, you can only check one item for each product.
               (We're still improving it)
           </small>
         </div>
@@ -54,8 +60,8 @@ class Listing extends Component {
         <div className="products__list--wrapper">
           { list.length ? (
               <List className="products__list" selectable ripple>
-                { list.map((product, key) =>
-                    this._createProduct(product, key, (list.length - 1)))
+                { list.map((product, index) =>
+                    this._createProduct(product, index, (list.length - 1)))
                 }
               </List>
             ) : <ProgressBar mode="indeterminate" type="circular" />
@@ -65,18 +71,24 @@ class Listing extends Component {
     )
   }
 
-  _createProduct (product, key, total) {
+  _createProduct (product, index, total) {
+    const isSelected = this.props.products.cart.indexOf(product.id) !== -1
+
     return (
-      <div key={key}>
+      <div key={index} className="list__individual">
         <ListCheckbox
           className="list__item"
-          checked={_.includes(this.props.products.cart, product.id)}
+          checked={isSelected}
           caption={product.name}
           legend={product.description}
           onChange={value => this.props.toggleOnCart(product.id, value)}
         />
 
-        { total !== key ? <ListDivider /> : ''}
+        <span className="list__item--price">
+          {currencyPrefix} {product.price.toLocaleString('en-CA')}
+        </span>
+
+        { total !== index ? <ListDivider /> : ''}
       </div>
     )
   }

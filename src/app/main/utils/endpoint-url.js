@@ -13,6 +13,6 @@ import auth from './auth'
 const browser = window
 const { api } = browser.getInitializationData()
 
-if (auth.getToken()) axios.defaults.headers.common.Authorization = auth.getToken()
+if (auth.getToken()) axios.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`
 
 export default endpoint => `${api.url}${api.version}/${endpoint}`

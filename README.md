@@ -14,7 +14,7 @@ Please, `make i` or `make install`
 Just `make run` and we're ready to rock! Access your http://localhost:3000/
 
 ## Hey, run it on the live demo! ❤️
-Create that as well: https://can-we-skip-the-dishes.herokuapp.com/
+Create that as well: http://can-we-skip-the-dishes.herokuapp.com/
 
 You can login with: `can-we-skip-the-dishes@guicheffer.me` as the email and the password: `yeswecan`
 
@@ -32,7 +32,9 @@ You can login with: `can-we-skip-the-dishes@guicheffer.me` as the email and the 
 
 ⬆️ explain those later
 
-I'm sorry for not completing the test, there were too details I wanted to adjust, that's why I got lost in time.
+## TL;DR
+
+**ps2**. I'm sorry for not completing the test, there were too details I wanted to adjust, that's why I got lost in time.
 
 BUT!
 
